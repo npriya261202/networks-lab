@@ -18,17 +18,12 @@ int main() {
     for (i = 0; i < n; i++) {
         c = s[i];
         if (c >= 'a' && c <= 'z') {
-            c = c + key;
-            if (c > 'z') {
-                c = c - 'z' + 'a' - 1;
-            }
+            c = 'a'+(c-'a'+key)%26;
             s[i] = c;
 
         } else if (c >= 'A' && c <= 'Z') {
-            c = c + key;
-            if (c > 'Z') {
-                c = c - 'Z' + 'A' - 1;
-            }
+        
+                c = 'A'+(c-'A'+key)%26;
             s[i] = c;
         }
     }
